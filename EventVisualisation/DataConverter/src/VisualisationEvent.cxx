@@ -184,14 +184,13 @@ void VisualisationEvent::fromJson(std::string json)
     runNumber = jsonRunNumber.GetInt();
   }
   this->setRunNumber(runNumber);
-  
+
   o2::header::DataHeader::TForbitType firstTForbit = 0;
   if (tree.HasMember("firstTForbit")) {
     rapidjson::Value& jsonFirstTForbit = tree["firstTForbit"];
     firstTForbit = jsonFirstTForbit.GetInt();
   }
   this->setFirstTForbit(firstTForbit);
-
 
   auto collisionTime = "not specified";
   if (tree.HasMember("collisionTime")) {
